@@ -104,5 +104,87 @@ body{
         border: 2px solid #157FFB;
         color: #157FFB;
     }
-
 }
+
+/* POPUP */
+
+.popup{
+    display: none;
+}
+
+.popup.active_popup{
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 90vh;
+    border-radius: 12px;
+    border: 2px solid #157FFB;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    border-radius: 12px;
+    border: 2px solid #157FFB;
+    background-color: #fff;
+}
+
+.cross {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    opacity: 0.3;
+    cursor: pointer;
+  }
+
+  .cross:hover {
+    opacity: 1;
+  }
+
+  .cross:before, .cross:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #157FFB;
+  }
+
+  .cross:before {
+    transform: rotate(45deg);
+  }
+
+  .cross:after {
+    transform: rotate(-45deg);
+  }
+
+  .name_popup h2{
+      text-align: center;
+      font-size: 16px;
+      margin-top: 40px;
+  }
+
+  .url_popup h2, .ssh_popup h2, .clone_url_popup h2, .stars_popup h2, .size_popup h2, .description_popup h2{
+      font-size: 14px;
+      margin-top: .5rem;
+  }
+
+  .url_popup p, .ssh_popup p, .clone_url_popup p, .stars_popup p, .size_popup p, .description_popup p{
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .url_popup{
+      max-width: 80vw;
+  }

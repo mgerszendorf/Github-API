@@ -24,6 +24,23 @@ const emailOrganizationTxt = document.querySelector(
   ".email_organization_wrapper p"
 );
 const resultArea = document.querySelector(".result_area");
+const popup = document.querySelector(".popup");
+const cross = document.querySelector(".cross");
+
+const namePopupTitle = document.querySelector(".name_popup h2");
+const urlPopupTitle = document.querySelector(".url_popup h2");
+const sshPopupTitle = document.querySelector(".ssh_popup h2");
+const cloneUrlPopupTitle = document.querySelector(".clone_url_popup h2");
+const starsPopupTitle = document.querySelector(".stars_popup h2");
+const sizePopupTitle = document.querySelector(".size_popup h2");
+const descriptionPopupTitle = document.querySelector(".description_popup h2");
+
+const urlPopupTxt = document.querySelector(".url_popup p");
+const sshPopupTxt = document.querySelector(".ssh_popup p");
+const cloneUrlPopupTxt = document.querySelector(".clone_url_popup p");
+const starsPopupTxt = document.querySelector(".stars_popup p");
+const sizePopupTxt = document.querySelector(".size_popup p");
+const descriptionPopupTxt = document.querySelector(".description_popup p");
 
 const addAPIData = () => {
   submitBtn.addEventListener("click", () => {
@@ -85,6 +102,32 @@ const addAPIData = () => {
             publicProjectsTxt.textContent = res[i].name;
             publicProjectsTxt.onclick = function () {
               console.log(res[i].id);
+
+              popup.classList.add("active_popup");
+
+              cross.onclick = function () {
+                popup.classList.remove("active_popup");
+              };
+
+              namePopupTitle.textContent = res[i].name;
+              urlPopupTitle.textContent = "URL: ";
+              sshPopupTitle.textContent = "SSH: ";
+              cloneUrlPopupTitle.textContent = "Clone URL: ";
+              starsPopupTitle.textContent = "Stars: ";
+              sizePopupTitle.textContent = "Size: ";
+              descriptionPopupTitle.textContent = "Description: ";
+
+              urlPopupTxt.textContent = res[i].html_url;
+              sshPopupTxt.textContent = res[i].ssh_url;
+              cloneUrlPopupTxt.textContent = res[i].clone_url;
+              starsPopupTxt.textContent = res[i].stargazers_count;
+              sizePopupTxt.textContent = res[i].size;
+              if (res[i].description === null || res[i].description === "") {
+                descriptionPopupTxt.textContent =
+                  "The data has not been shared";
+              } else {
+                descriptionPopupTxt.textContent = res[i].description;
+              }
             };
           }
         }
