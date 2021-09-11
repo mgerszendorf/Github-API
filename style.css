@@ -30,7 +30,6 @@ body{
 .add_organisation_form{
     display: flex;
     flex-direction: column;
-    /* width: 90vw; */
     max-width: 400px;
     margin: 0 auto;
 }
@@ -52,8 +51,9 @@ body{
     font-weight: 700;
     cursor: pointer;
     height: 3rem;
-    border: none;
+    border: 2px solid #157FFB;
     border-radius: 12px;
+    transition: .2s;
 }
 
 .organization_information div{
@@ -71,11 +71,38 @@ body{
     color: #fff;
     background-color: #157FFB;
     border-radius: 12px;
+    border: 2px solid #157FFB;
     cursor: pointer;
+    transition: .2s;
 }
 
 .public_projects p:active, #submit_btn:active {
     background-color: #fff;
     border: 2px solid #157FFB;
     color: #157FFB;
+}
+
+.public_projects_title{
+    margin-bottom: 2rem;
+}
+
+.url_organization_wrapper a{
+    color: #157FFB;
+}
+
+@media all and (min-width: 1024px){
+    .wrapper, .add_organisation_form{
+        max-width: 700px;
+    }
+
+    .organization_information, .public_projects_title{
+        text-align: center;
+    }
+
+    .public_projects p:hover, #submit_btn:hover {
+        background-color: #fff;
+        border: 2px solid #157FFB;
+        color: #157FFB;
+    }
+
 }
