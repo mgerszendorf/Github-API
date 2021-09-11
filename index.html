@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="wrapper">
+        <section class="add_organisation">
+            <h1>GitHub API</h1>
+            <form class="add_organisation_form">
+                <input id="urlinput" type="text" placeholder="Enter the name of the organization..." onfocus="this.placeholder=''"
+                    onblur="this.placeholder='Enter the name of the organization...'">
+                <button id="submit_btn" type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="result_area">
+            <div class="organization_information">
+                <div class="name_organization_wrapper">
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <div class="description_organization_wrapper">
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <div class="url_organization_wrapper">
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <div class="email_organization_wrapper">
+                    <h2></h2>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
