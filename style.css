@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.add_organisation{
+    margin-bottom: 1.5rem;
+}
+
+.add_organisation h1{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.add_organisation_form{
+    display: flex;
+    flex-direction: column;
+    /* width: 90vw; */
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#urlinput{
+    margin-bottom: .5rem;
+    height: 3rem;
+    color: #797979;
+    background-color: #fff;
+    border: 2px solid #E0E5DA;
+    border-radius: 12px;
+    padding-left: 1rem;
+    outline: none;
+}
+
+#submit_btn{
+    color: #fff;
+    background-color: #157FFB;
+    font-weight: 700;
+    cursor: pointer;
+    height: 3rem;
+    border: none;
+    border-radius: 12px;
+}
+
+.organization_information div{
+    margin-bottom: 1rem;
+}
+
+.organization_information div p, .organization_information div a, .public_projects p{
+    line-height: 2;
+}
+
+.public_projects p {
+    text-align: center;
+    margin: .7rem 0;
+    padding: .5rem 2rem;
+    color: #fff;
+    background-color: #157FFB;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.public_projects p:active, #submit_btn:active {
+    background-color: #fff;
+    border: 2px solid #157FFB;
+    color: #157FFB;
+}
