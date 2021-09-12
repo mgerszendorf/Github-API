@@ -35,6 +35,7 @@ body{
 }
 
 #urlinput{
+    font-size: 16px;
     margin-bottom: .5rem;
     height: 3rem;
     color: #797979;
@@ -49,6 +50,7 @@ body{
     color: #fff;
     background-color: #157FFB;
     font-weight: 700;
+    font-size: 16px;
     cursor: pointer;
     height: 3rem;
     border: 2px solid #157FFB;
@@ -118,24 +120,12 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80vw;
+    width: 90vw;
     height: 90vh;
     border-radius: 12px;
     border: 2px solid #157FFB;
     background-color: #fff;
     padding: 1rem;
-}
-
-.popup{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 80vh;
-    border-radius: 12px;
-    border: 2px solid #157FFB;
-    background-color: #fff;
 }
 
 .cross {
@@ -180,11 +170,45 @@ body{
       margin-top: .5rem;
   }
 
-  .url_popup p, .ssh_popup p, .clone_url_popup p, .stars_popup p, .size_popup p, .description_popup p{
+  .url_popup a, .ssh_popup p, .clone_url_popup p, .stars_popup p, .size_popup p, .description_popup p{
     font-size: 14px;
     line-height: 2;
+    word-wrap: break-word;
+  }
+
+  .url_popup a{
+    color: #157FFB;  
   }
 
   .url_popup{
       max-width: 80vw;
+  }
+
+  @media all and (min-width: 1024px){
+    .name_popup h2{
+        font-size: 22px;
+    }
+  
+    .url_popup h2, .ssh_popup h2, .clone_url_popup h2, .stars_popup h2, .size_popup h2, .description_popup h2{
+        font-size: 18px;
+    }
+  
+    .url_popup a, .ssh_popup p, .clone_url_popup p, .stars_popup p, .size_popup p, .description_popup p{
+      font-size: 16px;
+    }
+
+    .cross {
+        right: 32px;
+        top: 32px;
+        width: 32px;
+        height: 32px;
+      }
+
+    .popup.active_popup{
+        padding: 2rem;
+    }
+
+    .popup{
+        max-width: 1440px;
+    }
   }

@@ -26,7 +26,6 @@ const emailOrganizationTxt = document.querySelector(
 const resultArea = document.querySelector(".result_area");
 const popup = document.querySelector(".popup");
 const cross = document.querySelector(".cross");
-
 const namePopupTitle = document.querySelector(".name_popup h2");
 const urlPopupTitle = document.querySelector(".url_popup h2");
 const sshPopupTitle = document.querySelector(".ssh_popup h2");
@@ -34,8 +33,7 @@ const cloneUrlPopupTitle = document.querySelector(".clone_url_popup h2");
 const starsPopupTitle = document.querySelector(".stars_popup h2");
 const sizePopupTitle = document.querySelector(".size_popup h2");
 const descriptionPopupTitle = document.querySelector(".description_popup h2");
-
-const urlPopupTxt = document.querySelector(".url_popup p");
+const urlPopupTxt = document.querySelector(".url_popup a");
 const sshPopupTxt = document.querySelector(".ssh_popup p");
 const cloneUrlPopupTxt = document.querySelector(".clone_url_popup p");
 const starsPopupTxt = document.querySelector(".stars_popup p");
@@ -100,9 +98,9 @@ const addAPIData = () => {
             const publicProjectsTxt = document.createElement("p");
             publicProjects.appendChild(publicProjectsTxt);
             publicProjectsTxt.textContent = res[i].name;
-            publicProjectsTxt.onclick = function () {
-              console.log(res[i].id);
 
+            // POPUP
+            publicProjectsTxt.onclick = function () {
               popup.classList.add("active_popup");
 
               cross.onclick = function () {
@@ -118,10 +116,11 @@ const addAPIData = () => {
               descriptionPopupTitle.textContent = "Description: ";
 
               urlPopupTxt.textContent = res[i].html_url;
+              urlPopupTxt.href = res[i].html_url;
               sshPopupTxt.textContent = res[i].ssh_url;
               cloneUrlPopupTxt.textContent = res[i].clone_url;
               starsPopupTxt.textContent = res[i].stargazers_count;
-              sizePopupTxt.textContent = res[i].size;
+              sizePopupTxt.textContent = `${res[i].size} Kb`;
               if (res[i].description === null || res[i].description === "") {
                 descriptionPopupTxt.textContent =
                   "The data has not been shared";
